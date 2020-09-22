@@ -58,6 +58,21 @@ li {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  z-index: 10;
+}
+
+.effect-fade {
+  opacity: 0;
+  -webkit-transform: translate(0, 45px);
+          transform: translate(0, 45px);
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
+}
+
+.effect-fade.effect-scroll {
+  opacity: 1;
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
 }
 
 @media screen and (max-width: 1279px) {
@@ -69,10 +84,10 @@ li {
   }
 }
 
+/***** 共通 *****/
 /***** header *****/
 header {
   font-family: 源ノ角ゴシック JP;
-  z-index: 10;
 }
 
 header .inner {
@@ -89,7 +104,7 @@ header.fixed {
   height: 55px;
   position: fixed;
   padding-top: 0;
-  background: #fff;
+  background: #ffffff;
   background: rgba(255, 255, 255, 0.7);
   transition: top 0.65s ease-in;
   -webkit-transition: top 0.65s ease-in;
@@ -125,12 +140,17 @@ header .sns .fa-lg {
   color: #98A6B5;
 }
 
+header.bg-dark a {
+  color: #ffffff;
+}
+
 @media screen and (max-width: 768px) {
   header {
     height: 50px;
     position: relative;
     left: 50%;
-    color: #fff;
+    z-index: 10;
+    color: #ffffff;
     -webkit-transform: translateX(-50%);
             transform: translateX(-50%);
     background: #000;
@@ -163,7 +183,7 @@ header .sns .fa-lg {
   }
   header .global-nav ul li a,
   header .global-nav ul li a:hover {
-    color: #fff;
+    color: #ffffff;
   }
   header .global-nav-trigger {
     position: absolute;
@@ -187,7 +207,7 @@ header .sns .fa-lg {
     width: 100%;
     height: 3px;
     margin-top: -2px;
-    background-color: #fff;
+    background-color: #ffffff;
     font-size: 0px;
     -webkit-user-select: none;
        -moz-user-select: none;
@@ -201,7 +221,7 @@ header .sns .fa-lg {
     left: 0;
     width: 100%;
     height: 100%;
-    background: #fff;
+    background: #ffffff;
     content: '';
     -webkit-transition: all 0.5s cubic-bezier(0.7, 0, 0.36, 0.63);
     transition: all 0.5s cubic-bezier(0.7, 0, 0.36, 0.63);
@@ -301,4 +321,45 @@ header .sns .fa-lg {
 }
 
 /***** header *****/
+/***** slick *****/
+.hero_img {
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.hero_img .slick-list {
+  background-color: #000000;
+}
+
+.hero_img .slider img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100vh;
+  opacity: 0.7;
+}
+
+.hero_img p {
+  color: #ffffff;
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
+  opacity: 0;
+  -webkit-transform: translate(-50%, -40%);
+          transform: translate(-50%, -40%);
+  -webkit-transition: all 6s;
+  transition: all 6s;
+}
+
+.hero_img p.hero_fadein {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  opacity: 1;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+/***** slick *****/
 /*# sourceMappingURL=style.css.map */

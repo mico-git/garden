@@ -18,6 +18,7 @@ $breakpoint-down: ('sm': 'screen and (max-width: 479px)',
   }
 }
 
+$white:#ffffff;
 
 /***** 共通 *****/
 html {
@@ -47,7 +48,6 @@ a:hover {
   text-decoration: none;
   color: #3B4043;
   transition: .5s;
-
 }
 
 a:hover {
@@ -72,6 +72,18 @@ li {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 10;
+}
+
+.effect-fade {
+  opacity: 0;
+  transform: translate(0, 45px);
+  transition: all 300ms;
+}
+
+.effect-fade.effect-scroll {
+  opacity: 1;
+  transform: translate(0, 0);
 }
 
 @include mq-down(xl) {
@@ -84,11 +96,11 @@ li {
   }
 }
 
+/***** 共通 *****/
 
 /***** header *****/
 header {
   font-family: 源ノ角ゴシック JP;
-  z-index: 10;
 
   .inner {
     height: 10rem;
@@ -106,7 +118,7 @@ header {
     height: 55px;
     position: fixed;
     padding-top: 0;
-    background: #fff;
+    background: $white;
     background: rgba(255, 255, 255, .7);
     transition: top 0.65s ease-in;
     -webkit-transition: top 0.65s ease-in;
@@ -143,16 +155,19 @@ header {
     }
   }
 
+  &.bg-dark a {
+    color: $white;
+  }
 
 }
 
-// 引数を省略（初期値はmdの768px）
 @include mq-down(md) {
   header {
     height: 50px;
     position: relative;
     left: 50%;
-    color: #fff;
+    z-index: 10;
+    color: $white;
     transform: translateX(-50%);
     background: #000;
     box-shadow: 0 0 10px #000;
@@ -186,7 +201,7 @@ header {
 
           a,
           a:hover {
-            color: #fff;
+            color: $white;
           }
         }
       }
@@ -212,7 +227,7 @@ header {
         width: 100%;
         height: 3px;
         margin-top: -2px;
-        background-color: #fff;
+        background-color: $white;
         font-size: 0px;
         user-select: none;
         transition: background-color 0.3s;
@@ -223,7 +238,7 @@ header {
           left: 0;
           width: 100%;
           height: 100%;
-          background: #fff;
+          background: $white;
           content: '';
           transition: all 0.5s cubic-bezier(0.7, 0, 0.36, 0.63);
 
@@ -338,11 +353,46 @@ header {
   }
 }
 
-
-
-
-
-
-// }
-
 /***** header *****/
+/***** slick *****/
+.hero_img {
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  .slick-list {
+    background-color: #000000;
+  }
+
+  .slider img {
+    object-fit: cover;
+    height: 100vh;
+    opacity: 0.7;
+  }
+
+  p {
+    // position: absolute;
+    // top: 50%;
+    // left: 50%;
+    // transform: translate(-50%, -50%);
+    color: $white;
+    writing-mode: vertical-rl;
+    opacity: 0;
+    transform: translate(-50%, -40%);
+    transition: all 6s;
+
+    &.hero_fadein {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      opacity: 1;
+      // transform: translate(0, 0);
+      transform: translate(-50%, -50%);
+    }
+  }
+
+
+}
+
+/***** slick *****/
