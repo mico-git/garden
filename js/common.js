@@ -11,10 +11,12 @@ $(function () {
   var $header = $('header');
   // Nav Fixed
   $(window).scroll(function () {
-    if ($(window).scrollTop() > 1000) {
+    if ($(window).scrollTop() > 200) {
       $header.addClass('fixed');
+      $header.removeClass('bg-dark');
     } else {
       $header.removeClass('fixed');
+      $header.addClass('bg-dark');
     }
   });
 });
