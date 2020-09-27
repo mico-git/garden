@@ -18,7 +18,7 @@
 <body>
   <header class="bg-dark">
     <div class="container_980">
-      <nav class="global-nav">
+      <nav id="navbar" class="global-nav">
         <h1><a href="/">株式会社 宗松</a></h1>
         <a href="#" class="global-nav-trigger"><span>Menu</span></a>
         <div class="menu-overlay">
@@ -109,10 +109,10 @@
       </div>
     </section>
     <section class="sns">
-      <div id="instafeed"></div>
       <div class="container_980 flex_column">
         <h2><i class="fab fa-instagram fa-sm"></i>Instagram</h2>
-        <div class="flex_row">
+        <div id="instagram-feed" class="instagram_feed"></div>
+        <!-- <div class="flex_row">
           <div class="box_6">
             <img src="img/topimg01.jpg" alt="" />
           </div>
@@ -132,7 +132,7 @@
             <img src="img/topimg01.jpg" alt="" />
           </div>
           <button class=" md_disp_none">もっと見る</button>
-        </div>
+        </div> -->
         <div class="flex_row">
           <div class="box_2">
             <h2><i class="fab fa-facebook fa-sm"></i>Facebook</h2>
@@ -178,28 +178,36 @@
         &copy;2020 munematsu.co.jp
       </p>
     </div>
+    <div id="page_top">
+      <!-- <a href="#navbar"> -->
+      <i class="fas fa-arrow-up"></i>
+      <!-- </a> -->
+    </div>
   </footer>
   <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
   <script type="text/javascript" src="js/slick.min.js"></script>
   <script src="js/common.js"></script>
-  <!-- <script src="js/instafeed.min.js"></script>
+  <!-- <script src="js/InstagramFeed.min.js"></script> -->
+  <script src="js/jquery.instagramFeed.min.js"></script>
   <script>
-    (function () {
-      new InstagramFeed({
-        'username': 'instagram',
-        'container': document.getElementById("instagram-feed1"),
-        'display_profile': true,
-        'display_biography': true,
-        'display_gallery': true,
-        'callback': null,
-        'styling': true,
-        'items': 8,
-        'items_per_row': 4,
-        'margin': 1,
-        'lazy_load': true,
-        'on_error': console.error
+    (function ($) {
+      $(window).on('load', function () {
+        $.instagramFeed({
+          // 'tag': 'トリュフリゾット',
+          'username': 'frankzakka.jp',
+          'container': "#instagram-feed",
+          'display_profile': false,
+          'display_biography': false,
+          'display_gallery': true,
+          'callback': null,
+          'styling': true,
+          'items': 6,
+          'items_per_row': 6,
+          'margin': 0.25,
+          'lazy_load': true
+        });
       });
-    })();
-  </script> -->
+    })(jQuery);
+  </script>
 </body>
 </html>
