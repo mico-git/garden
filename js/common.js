@@ -54,14 +54,35 @@ window.onload = function () {
   }
 };
 
-window.onload = function () {
-  //フェードイン トップのロゴ
-  hero_fadein();
+// window.onload = function () {
+//   //フェードイン トップのロゴ
+//   hero_fadein();
 
-  function hero_fadein() {
-    $('.hero_img p').addClass('hero_fadein');
-  };
-};
+//   function hero_fadein() {
+//     $('.hero_img p').addClass('hero_fadein');
+//   };
+// };
+
+
+
+$(function () {
+
+  var delaySpeed = 2000; // 1秒ずつ遅らせる
+  var fadeSpeed = 1000; // 1秒かける
+
+  $(window).on('load', function () {
+
+    $('.hero_img p').each(function (i) {
+      $(this).delay(i * (delaySpeed)).animate({
+        'opacity': '1'
+      }, fadeSpeed).addClass('hero_fadein');
+    });
+
+  });
+
+});
+
+
 
 //ページトップボタン
 $(function () {
