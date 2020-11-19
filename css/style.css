@@ -635,198 +635,6 @@ header.bg-dark a {
 }
 
 /***** header *****/
-/***** slick *****/
-.hero_img {
-  padding: 0;
-  margin-top: -10rem;
-}
-
-.hero_img .slick-list {
-  background-color: #000000;
-}
-
-.hero_img .slider img {
-  -o-object-fit: cover;
-     object-fit: cover;
-  height: 100vh;
-  opacity: 0.7;
-}
-
-.hero_img p {
-  color: #ffffff;
-  opacity: 0;
-  -webkit-transform: translate(-50%, -40%);
-          transform: translate(-50%, -40%);
-  -webkit-transition: all 6s;
-  transition: all 6s;
-}
-
-.hero_img p.hero_fadein {
-  position: absolute;
-  top: calc(50% + 1rem);
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-}
-
-.hero_img p.hero_fadein:nth-of-type(2) {
-  width: 10rem;
-  height: auto;
-  position: absolute;
-  top: calc(50% - 10rem);
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-}
-
-.hero_img p.hero_fadein:nth-of-type(3) {
-  top: calc(50% + 13rem);
-}
-
-@media screen and (max-width: 768px) {
-  .hero_img {
-    position: relative;
-  }
-  .hero_img p.hero_fadein {
-    top: calc(50% + 50px);
-    margin-top: 0;
-  }
-  .hero_img .slider img {
-    height: calc((100vh - 19rem) + 50px);
-  }
-}
-
-/***** slick *****/
-/***** ABOUT *****/
-.about .container_980 {
-  margin-bottom: 9rem;
-}
-
-@media screen and (max-width: 768px) {
-  .about .container_980 {
-    margin-bottom: 3rem;
-  }
-  .about .container_1280 {
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
-  }
-  .about .container_1280 p {
-    line-height: 2.8rem;
-    font-size: 1.42rem;
-  }
-  .about .container_1280 img {
-    width: 100vw;
-    margin-left: calc(-50vw + 50%);
-    margin-right: calc(-50vw + 50%);
-  }
-}
-
-/***** ABOUT *****/
-/***** WORKS *****/
-/***** WORKS *****/
-/***** CONTACT *****/
-.contact {
-  background-color: #E0E0E0;
-  text-align: center;
-}
-
-.contact .container_980 {
-  padding: 0 20rem;
-}
-
-@media screen and (max-width: 768px) {
-  .contact .container_980 {
-    padding: 0;
-  }
-  .contact h2.md_disp_block {
-    font-size: 2.2rem;
-  }
-  .contact h2.md_disp_block:after {
-    display: none;
-  }
-  .contact p {
-    text-align: left;
-    font-size: 1.42rem;
-  }
-  .contact p.p_sizeL {
-    margin-top: 1rem;
-    font-size: 2.6rem;
-    margin: 0 auto;
-  }
-}
-
-/***** CONTACT *****/
-/*****  ACCESS *****/
-.access iframe {
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
-  margin-right: calc(-50vw + 50%);
-  margin-bottom: 4rem;
-}
-
-.access .flex_row {
-  width: 100%;
-}
-
-.access .flex_row h1 {
-  font-size: 3rem;
-}
-
-.access .flex_row h1 img {
-  width: 66px;
-}
-
-@media screen and (max-width: 768px) {
-  .access .container_980 {
-    position: relative;
-  }
-  .access iframe {
-    margin-bottom: 0;
-  }
-  .access h2 {
-    position: absolute;
-    top: 1rem;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
-    z-index: 10;
-    width: 100%;
-    text-align: center;
-  }
-}
-
-/*****  ACCESS *****/
-/*****  SNS *****/
-.sns h2 {
-  margin-bottom: 1.65rem;
-}
-
-.sns .flex_row:nth-of-type(2) {
-  margin-top: 6rem;
-}
-
-@media screen and (max-width: 768px) {
-  .sns h2 {
-    margin: 0 auto 1.5rem;
-    text-align: center;
-  }
-  .sns h2:after {
-    display: none;
-  }
-  .sns div#instagram-feed .instagram_gallery a img {
-    width: 48% !important;
-    margin-right: 2.99% !important;
-  }
-  .sns div#instagram-feed .instagram_gallery a:nth-of-type(2n) img {
-    margin-right: 0% !important;
-  }
-  .sns .flex_row:nth-of-type(2) {
-    margin-top: 3rem;
-  }
-}
-
-/*****  SNS *****/
 /*****  FOOTER *****/
 footer {
   background-color: #3B4043;
@@ -969,4 +777,235 @@ footer .footer-nav + p {
 }
 
 /*****  FOOTER *****/
+/***** slick *****/
+.hero_img {
+  padding: 0;
+  margin-top: -10rem;
+}
+
+.hero_img .slick-list {
+  background-color: #000000;
+}
+
+.hero_img .slider img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100vh;
+  opacity: 0.7;
+}
+
+.hero_img p {
+  color: #ffffff;
+  opacity: 0;
+  -webkit-transform: translate(-50%, -40%);
+          transform: translate(-50%, -40%);
+  -webkit-transition: all 6s;
+  transition: all 6s;
+}
+
+.hero_img p.hero_fadein {
+  position: absolute;
+  top: calc(50% + 1rem);
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.hero_img p.hero_fadein:nth-of-type(2) {
+  width: 10rem;
+  height: auto;
+  position: absolute;
+  top: calc(50% - 10rem);
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.hero_img p.hero_fadein:nth-of-type(3) {
+  top: calc(50% + 13rem);
+}
+
+@media screen and (max-width: 768px) {
+  .hero_img {
+    position: relative;
+  }
+  .hero_img p.hero_fadein {
+    top: calc(50% + 50px);
+    margin-top: 0;
+  }
+  .hero_img .slider img {
+    height: calc((100vh - 19rem) + 50px);
+  }
+}
+
+/***** slick *****/
+/**********  トップページ **********/
+/***** ABOUT *****/
+.about .container_980 {
+  margin-bottom: 9rem;
+}
+
+@media screen and (max-width: 768px) {
+  .about .container_980 {
+    margin-bottom: 3rem;
+  }
+  .about .container_1280 {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  .about .container_1280 p {
+    line-height: 2.8rem;
+    font-size: 1.42rem;
+  }
+  .about .container_1280 img {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+  }
+}
+
+/***** ABOUT *****/
+/***** CONTACT *****/
+.contact {
+  background-color: #E0E0E0;
+  text-align: center;
+}
+
+.contact .container_980 {
+  padding: 0 20rem;
+}
+
+@media screen and (max-width: 768px) {
+  .contact .container_980 {
+    padding: 0;
+  }
+  .contact h2.md_disp_block {
+    font-size: 2.2rem;
+    margin: 0 auto 30px;
+  }
+  .contact h2.md_disp_block:after {
+    display: none;
+  }
+  .contact p {
+    text-align: left;
+    font-size: 1.42rem;
+  }
+  .contact p.p_sizeL {
+    margin-top: 1rem;
+    font-size: 2.6rem;
+    margin: 0 auto;
+  }
+}
+
+/***** CONTACT *****/
+/*****  ACCESS *****/
+.access iframe {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  margin-bottom: 4rem;
+}
+
+.access .flex_row {
+  width: 100%;
+}
+
+.access .flex_row h1 {
+  font-size: 3rem;
+}
+
+.access .flex_row h1 img {
+  width: 66px;
+}
+
+@media screen and (max-width: 768px) {
+  .access .container_980 {
+    position: relative;
+  }
+  .access iframe {
+    margin-bottom: 0;
+  }
+  .access h2 {
+    position: absolute;
+    top: 1rem;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    z-index: 10;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/*****  ACCESS *****/
+/*****  SNS *****/
+.sns h2 {
+  margin-bottom: 1.65rem;
+}
+
+.sns .flex_row:nth-of-type(2) {
+  margin-top: 6rem;
+}
+
+@media screen and (max-width: 768px) {
+  .sns h2 {
+    margin: 0 auto 1.5rem;
+    text-align: center;
+  }
+  .sns h2:after {
+    display: none;
+  }
+  .sns div#instagram-feed .instagram_gallery a img {
+    width: 48% !important;
+    margin-right: 2.99% !important;
+  }
+  .sns div#instagram-feed .instagram_gallery a:nth-of-type(2n) img {
+    margin-right: 0% !important;
+  }
+  .sns .flex_row:nth-of-type(2) {
+    margin-top: 3rem;
+  }
+}
+
+/*****  SNS *****/
+/**********  サブページ共通 **********/
+.topimg {
+  padding: 0 0 60px;
+}
+
+.topimg .container_1280 {
+  margin-top: -10%;
+}
+
+.topimg .container_1280 .text_wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.topimg .container_1280 .topimg_text {
+  padding: 1% 4%;
+  background: #939393;
+}
+
+.topimg .container_1280 .topimg_text p {
+  font-size: 23px;
+  color: #ffffff;
+  max-height: 345px;
+  margin-left: 0;
+  margin: 0 auto;
+  line-height: 2.2;
+}
+
+.topimg .container_1280 p {
+  line-height: 2.5;
+  margin-left: 6%;
+  margin-bottom: 4rem;
+}
+
+/**********  会社概要ページ **********/
 /*# sourceMappingURL=style.css.map */
