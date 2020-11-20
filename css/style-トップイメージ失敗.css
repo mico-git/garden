@@ -9,9 +9,7 @@ body * {
   padding: 0;
   font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif, "Helvetica Neue", Arial;
   font-size: 1.6rem;
-  color: #707070;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  color: #3B4043;
 }
 
 main {
@@ -148,7 +146,7 @@ section {
 }
 
 section > *:last-child {
-  margin-bottom: 0 !important;
+  margin-bottom: 0;
 }
 
 .container_1280 {
@@ -238,7 +236,6 @@ section > *:last-child {
 .box_3 p {
   font-size: 1.2rem;
   line-height: 2.4rem;
-  color: #3B4043;
 }
 
 .box_4 {
@@ -309,7 +306,6 @@ section > *:last-child {
         -ms-flex-align: start;
             align-items: flex-start;
     margin-bottom: 3.5rem;
-    padding: 0;
   }
   .vertical-rl {
     margin: 5rem auto 0;
@@ -547,11 +543,6 @@ header.bg-dark a {
   header .global-nav-trigger span:after {
     -webkit-transform: translateY(250%);
             transform: translateY(250%);
-  }
-  header.fixed span,
-  header.fixed span:before,
-  header.fixed span:after {
-    background: #3B4043;
   }
   .global-nav-open h1 {
     visibility: hidden;
@@ -881,10 +872,6 @@ footer .footer-nav + p {
   text-align: center;
 }
 
-.contact * {
-  color: #3B4043;
-}
-
 .contact .container_980 {
   padding: 0 20rem;
 }
@@ -922,10 +909,6 @@ footer .footer-nav + p {
 
 .access .flex_row {
   width: 100%;
-}
-
-.access .flex_row * {
-  color: #3B4043;
 }
 
 .access .flex_row h1 {
@@ -986,273 +969,58 @@ footer .footer-nav + p {
 }
 
 /*****  SNS *****/
-/**********  サブページ共通 **********/
-.topimg {
-  padding: 0 0 60px;
-  background: url(../img/topimg05.jpg) #ffffff no-repeat top center/cover;
-  height: 530px;
-  position: relative;
-}
-
-.topimg .container_1280 {
-  position: absolute;
-  top: 38%;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-}
-
-.topimg .container_1280 .text_wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
-}
-
-.topimg .container_1280 .topimg_text {
-  width: 260px;
-  height: 470px;
-  padding: 30px 80px;
-  background: #939393;
-}
-
-.topimg .container_1280 .topimg_text p {
-  font-size: 23px;
-  color: #ffffff;
-  max-height: 345px;
-  margin-left: 0;
-  margin: 0 auto;
-  line-height: 2.2;
-}
-
-.topimg .container_1280 p {
-  line-height: 2.5;
-  margin-left: 6%;
-}
-
-@media screen and (max-width: 768px) {
-  .topimg {
-    padding-bottom: 0rem;
-    height: 410px;
-    margin-top: -50px;
-  }
-  .topimg .container_1280 .text_wrapper {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  .topimg .container_1280 .text_wrapper .topimg_text {
-    width: 200px;
-    height: 380px;
-    padding: 30px 0;
-    margin: 0 auto 4rem;
-  }
-  .topimg .container_1280 p {
-    margin-left: 0;
-    line-height: initial;
-    letter-spacing: inherit;
-  }
-}
-
-.topimg + main {
-  margin-top: 20rem;
-}
-
-@media screen and (max-width: 768px) {
-  .topimg + main {
-    margin-top: 30rem;
-  }
-}
-
-.topimg2 {
-  margin-top: 180px;
-  padding: 0 0 60px;
-}
-
-.topimg2 .container_1280 {
-  margin-top: -10%;
-}
-
-.topimg2 .container_1280 .text_wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
-}
-
-.topimg2 .container_1280 .topimg_text {
-  padding: 5% 6%;
-  background: #939393;
-  max-width: 260px;
-}
-
-.topimg2 .container_1280 .topimg_text p {
-  font-size: 23px;
-  color: #ffffff;
-  max-height: 345px;
-  margin-left: 0;
-  margin: 0 auto;
-  line-height: 2.2;
-}
-
-.topimg2 .container_1280 p {
-  line-height: 2.5;
-  margin-left: 6%;
-}
-
-@media screen and (max-width: 768px) {
-  .topimg2 {
-    padding-bottom: 4rem;
-    margin-top: 360px;
-  }
-  .topimg2 .container_1280 .text_wrapper {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  .topimg2 .container_1280 .topimg_text {
-    width: 200px;
-    margin: 0 auto 4rem;
-  }
-  .topimg2 .container_1280 p {
-    line-height: initial;
-    letter-spacing: initial;
-  }
-  header.fixed + .topimg2 {
-    padding-bottom: 4rem;
-  }
-}
-
-.topimg2 + main .container_1280 {
-  margin-bottom: 14rem;
-}
-
-@media screen and (max-width: 768px) {
-  .topimg2 + main .container_1280 {
-    margin-bottom: 5rem;
-  }
-  .topimg2 + main .container_1280 img {
-    margin-left: 0px;
-  }
-  .topimg2 + main .container_1280 p {
-    line-height: 2.8rem;
-    font-size: 1.42rem;
-  }
-}
-
-/**********  サブページ共通 **********/
 /**********  会社概要ページ **********/
-#company {
-  /*****  会社紹介 *****/
-  /*****  会社情報 *****/
-}
-
-#company .container_1280:nth-child(2n) {
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: row-reverse;
-          flex-direction: row-reverse;
-}
-
-#company .container_1280:nth-child(2n) img {
-  margin: 0 70px 0 0;
-}
-
-#company .company_info * {
-  color: #3B4043;
-}
-
-#company .company_info .container_980 {
-  padding: 0 20rem;
-}
-
-#company .company_info .container_980 ul {
+.company .topimg {
+  background: url(../img/coimg01.png) #ffff00 no-repeat top center/cover;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  text-align: left;
-  margin-bottom: 3.5rem;
-}
-
-#company .company_info .container_980 ul:last-child {
-  margin-bottom: 0rem;
-}
-
-#company .company_info .container_980 ul li:first-child {
-  width: 19rem;
-}
-
-@media screen and (max-width: 768px) {
-  #company .topimg2 + main .company_info .container_980,
-  #company .topimg1 + main .company_info .container_980 {
-    padding: 0px;
-  }
-  #company .topimg2 + main .company_info .container_980 ul,
-  #company .topimg1 + main .company_info .container_980 ul {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    margin-bottom: 0px;
-  }
-  #company .topimg2 + main .company_info .container_980 ul li,
-  #company .topimg1 + main .company_info .container_980 ul li {
-    margin-bottom: 1.8rem;
-  }
-  #company .topimg2 + main .company_info .container_980 ul li:first-child,
-  #company .topimg1 + main .company_info .container_980 ul li:first-child {
-    font-weight: bold;
-  }
-}
-
-#company .contact .container_980 {
   padding: 0;
 }
 
-#company .access {
-  background: #E0E0E0;
+.company .topimg:before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  padding-bottom: 27.604%;
 }
 
-#company .access iframe {
-  margin-bottom: 0rem;
+.company .topimg .container_1280 {
+  position: relative;
 }
 
-/**********  会社概要ページ **********
-/**********  施工事例ページ **********/
-#works .container_1280 {
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: row-reverse;
-          flex-direction: row-reverse;
+.company .topimg .container_1280 .text_wrapper {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
 }
 
-#works .container_1280 img {
-  margin: 0 70px 0 0;
+.company .topimg .container_1280 .topimg_text {
+  width: 260px;
+  max-height: 470px;
+  padding: 30px 82px;
+  background: #939393;
 }
 
-#works .works .box_3 {
-  margin-bottom: 10rem;
+.company .topimg .container_1280 .topimg_text p {
+  font-size: 23px;
+  color: #ffffff;
+  max-height: 440px;
 }
 
-#works .works .box_3:nth-last-child(-n+3) {
-  margin-bottom: 0rem;
+.company .topimg .container_1280 p {
+  letter-spacing: 0.9rem;
+  margin-left: 8rem;
 }
 
-@media screen and (max-width: 768px) {
-  #works .works .box_3 {
-    margin-bottom: 2rem;
-  }
-  #works .works .box_3:nth-last-child(-n+3) {
-    margin-bottom: 2rem;
-  }
-  #works .works .box_3:last-child {
-    margin-bottom: 0rem;
-  }
+.company main {
+  margin-top: 22%;
 }
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=style-トップイメージ失敗.css.map */

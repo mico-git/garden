@@ -1039,60 +1039,55 @@ footer {
 
 
 
-/**********  会社概要ページ **********/
-.company {
+/**********  サブページ共通 **********/
+.topimg {
+  padding: 0 0 60px;
 
-  .topimg {
-    background: url(../img/coimg01.png) #ffff00 no-repeat top center/cover;
-    // width: 100%;
-// height: 0;
-// padding-top: 27.604%;
-    display: flex;
-    padding: 0;
+  .container_1280 {
+    margin-top: -10%;
 
-    &:before {
-      content: "";
-      display: block;
-      width: 0;
-      height: 0;
-      padding-bottom: 27.604%;
+    .text_wrapper {
+      // position: absolute;
+      // left: 0;
+      // top: 50%;
+      display: flex;
+      align-items: flex-end;
     }
 
-    .container_1280 {
-      position: relative;
+    .topimg_text {
 
-      .text_wrapper {
-        position: absolute;
-        left: 0;
-        top: 50%;
-        display: flex;
-        align-items: flex-end;
-      }
-
-      .topimg_text {
-
-        width: 260px;
-        max-height: 470px;
-        padding: 30px 82px;
-        background: #939393;
-
-        p {
-          font-size: 23px;
-          color: #ffffff;
-          max-height: 440px; //firefox
-        }
-      }
+      // width: 260px;
+      // max-height: 470px;
+      // padding: 30px 82px;
+      padding: 1% 4%;
+      background: #939393;
 
       p {
-        // line-height: 5.5rem;
-        letter-spacing: 0.9rem;
-        margin-left: 8rem;
+        font-size: 23px;
+        color: #ffffff;
+        // max-height: 440px;
+        max-height: 345px; //firefox
+        margin-left: 0;
+        margin: 0 auto;
+        line-height: 2.2;
       }
     }
-  }
 
-
-  main {
-    margin-top: 22%;
+    p {
+      line-height: 2.5;
+      // letter-spacing: 0.9rem;
+      // margin-left: 8rem;
+      margin-left: 6%;
+      margin-bottom: 4rem;
+    }
   }
 }
+
+
+// main {
+//   margin-top: 22%;
+// }
+
+
+/**********  会社概要ページ **********/
+.company {}

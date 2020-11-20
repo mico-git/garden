@@ -46,6 +46,7 @@ $breakpoint-down: ('sm': 'screen and (max-width: 479px)',
 //変数
 $white: #ffffff;
 $gray:#E0E0E0;
+// $h2gray:#707070;
 $icon_color:#98A6B5;
 $pc_font_l:3rem;
 $pc_font_s:1.2rem;
@@ -68,7 +69,9 @@ body * {
     "Helvetica Neue",
     Arial;
   font-size: 1.6rem;
-  color: #3B4043;
+  // color: #3B4043;
+  color: #707070;
+  box-sizing: border-box;
 }
 
 main {
@@ -175,7 +178,7 @@ section {
 }
 
 section>*:last-child {
-  margin-bottom: 0;
+  margin-bottom: 0 !important;
 }
 
 .container_1280 {
@@ -235,6 +238,7 @@ section>*:last-child {
   p {
     font-size: $pc_font_s;
     line-height: 2.4rem;
+    color: #3B4043;
   }
 }
 
@@ -319,6 +323,7 @@ section>*:last-child {
     max-width: calc(100% - 5rem);
     align-items: flex-start;
     margin-bottom: 3.5rem;
+    padding: 0;
   }
 
   .vertical-rl {
@@ -541,6 +546,12 @@ header {
           transform: translateY(250%);
         }
       }
+    }
+
+    &.fixed span,
+    &.fixed span:before,
+    &.fixed span:after {
+      background: #3B4043;
     }
   }
 
@@ -912,6 +923,10 @@ footer {
 
 /***** CONTACT *****/
 .contact {
+  * {
+    color: #3B4043;
+  }
+
   background-color: $gray;
   text-align: center;
 
@@ -952,6 +967,10 @@ footer {
 /***** CONTACT *****/
 /*****  ACCESS *****/
 .access {
+  // * {
+  //   color: #3B4043;
+  // }
+
   iframe {
     @include width_100();
     margin-bottom: 4rem;
@@ -959,6 +978,10 @@ footer {
 
   .flex_row {
     width: 100%;
+
+    * {
+      color: #3B4043;
+    }
 
     h1 {
       img {
@@ -1042,6 +1065,90 @@ footer {
 /**********  サブページ共通 **********/
 .topimg {
   padding: 0 0 60px;
+  background: url(../img/topimg05.jpg) #ffffff no-repeat top center/cover;
+  height: 530px;
+  position: relative;
+  // box-sizing: border-box;
+
+  .container_1280 {
+    position: absolute;
+    top: 38%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    .text_wrapper {
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .topimg_text {
+      width: 260px;
+      height: 470px;
+      padding: 30px 80px;
+      background: #939393;
+
+      p {
+        font-size: 23px;
+        color: #ffffff;
+        max-height: 345px; //firefox
+        margin-left: 0;
+        margin: 0 auto;
+        line-height: 2.2;
+      }
+    }
+
+    p {
+      line-height: 2.5;
+      // letter-spacing: 0.9rem;
+      // margin-left: 8rem;
+      margin-left: 6%;
+      // margin-bottom: 4rem;
+    }
+  }
+}
+
+@include mq-down(md) {
+  .topimg {
+    padding-bottom: 0rem;
+    height: 410px;
+    margin-top: -50px;
+
+
+    .container_1280 {
+      .text_wrapper {
+        flex-direction: column;
+
+        .topimg_text {
+          width: 200px;
+          height: 380px;
+          padding: 30px 0;
+          margin: 0 auto 4rem;
+        }
+      }
+
+      p {
+        margin-left: 0;
+        line-height: initial;
+        letter-spacing: inherit;
+      }
+    }
+  }
+}
+
+
+.topimg+main {
+  margin-top: 20rem;
+}
+
+@include mq-down(md) {
+  .topimg+main {
+    margin-top: 30rem;
+  }
+}
+
+.topimg2 {
+  margin-top: 180px;
+  padding: 0 0 60px;
 
   .container_1280 {
     margin-top: -10%;
@@ -1055,12 +1162,9 @@ footer {
     }
 
     .topimg_text {
-
-      // width: 260px;
-      // max-height: 470px;
-      // padding: 30px 82px;
-      padding: 1% 4%;
+      padding: 5% 6%;
       background: #939393;
+      max-width: 260px;
 
       p {
         font-size: 23px;
@@ -1078,16 +1182,190 @@ footer {
       // letter-spacing: 0.9rem;
       // margin-left: 8rem;
       margin-left: 6%;
-      margin-bottom: 4rem;
+      // margin-bottom: 4rem;
+    }
+  }
+}
+
+@include mq-down(md) {
+  .topimg2 {
+    padding-bottom: 4rem;
+    margin-top: 360px;
+
+    .container_1280 {
+      .text_wrapper {
+        flex-direction: column;
+      }
+
+      .topimg_text {
+        width: 200px;
+        margin: 0 auto 4rem;
+      }
+
+      p {
+        line-height: initial;
+        letter-spacing: initial;
+      }
+    }
+  }
+
+  header.fixed+.topimg2 {
+    padding-bottom: 4rem;
+  }
+}
+
+.topimg2+main {
+  .container_1280 {
+    margin-bottom: 14rem;
+  }
+}
+
+
+@include mq-down(md) {
+  .topimg2+main {
+    .container_1280 {
+      margin-bottom: 5rem;
+
+      img {
+        margin-left: 0px;
+      }
+
+      p {
+        line-height: 2.8rem;
+        font-size: 1.42rem;
+      }
     }
   }
 }
 
 
-// main {
-//   margin-top: 22%;
+
+
+// .topimg2+main {
+//   margin-top: 20rem;
 // }
 
-
+/**********  サブページ共通 **********/
 /**********  会社概要ページ **********/
-.company {}
+#company {
+
+  /*****  会社紹介 *****/
+  .container_1280 {
+    &:nth-child(2n) {
+      flex-direction: row-reverse;
+
+      img {
+        margin: 0 70px 0 0;
+      }
+    }
+
+    // margin-bottom: 14rem;
+
+  }
+
+  /*****  会社情報 *****/
+  .company_info {
+    * {
+      color: #3B4043;
+    }
+
+    .container_980 {
+      padding: 0 20rem;
+
+
+      ul {
+        display: flex;
+        text-align: left;
+        margin-bottom: 3.5rem;
+
+        &:last-child {
+          margin-bottom: 0rem;
+        }
+
+        li {
+          &:first-child {
+            width: 19rem;
+          }
+        }
+      }
+    }
+
+  }
+
+  @include mq-down(md) {
+
+    .topimg2+main,
+    .topimg1+main {
+      .company_info {
+        .container_980 {
+          padding: 0px;
+
+          ul {
+            flex-direction: column;
+            margin-bottom: 0px;
+
+            li {
+              margin-bottom: 1.8rem;
+
+              &:first-child {
+                font-weight: bold;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .contact .container_980 {
+    padding: 0;
+  }
+
+  .access {
+    background: #E0E0E0;
+
+    iframe {
+      margin-bottom: 0rem;
+    }
+  }
+}
+
+/**********  会社概要ページ **********
+/**********  施工事例ページ **********/
+#works {
+  .container_1280 {
+    flex-direction: row-reverse;
+
+    img {
+      margin: 0 70px 0 0;
+    }
+  }
+
+  .works {
+    .box_3 {
+      margin-bottom: 10rem;
+
+      &:nth-last-child(-n+3) {
+        margin-bottom: 0rem;
+      }
+    }
+  }
+}
+
+@include mq-down(md) {
+  #works {
+    .works {
+      .box_3 {
+        margin-bottom: 2rem;
+
+        &:nth-last-child(-n+3) {
+          margin-bottom: 2rem;
+        }
+
+        &:last-child {
+          margin-bottom: 0rem;
+        }
+      }
+    }
+  }
+}
