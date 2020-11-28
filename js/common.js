@@ -104,3 +104,55 @@ $(function () {
     return false;
   });
 });
+
+/**********  施工事例 詳細情報ページ **********/
+// $(function () {
+//   var slide_main = $(".slide").slick({
+//     asNavFor: ".slide-navigation",
+//     infinite: true,
+//     slidesToShow: 1,
+//     slidesToScroll: 1,
+//     arrows: false,
+//     fade: true,
+//   });
+//   var slide_sub = $(".slide-navigation").slick({
+//     asNavFor: ".slide",
+//     centerMode: true,
+//     infinite: true,
+//     slidesToShow: 3,
+//     slidesToScroll: 1,
+//     autoplay: true,
+//     autoplaySpeed: 4000,
+//     speed: 400,
+//     focusOnSelect: true,
+//   });
+// var open_window_Width = $(window).width();
+// $(window).resize(function () {
+//   var width = $(window).width();
+//   if (open_window_Width != width) {
+//     slide_main.slick("setPosition");
+//     slide_sub.slick("setPosition");
+//   }
+// });
+// });
+
+
+$(document).ready(function () {
+  $('.thumbnail').slick({
+    infinite: true, //スライドのループ有効化
+    arrows: false, //矢印非表示
+    fade: true, //フェードの有効化
+    draggable: false //ドラッグ操作の無効化
+  });
+  $('.thumbnail-thumb').slick({
+    infinite: true, //スライドのループ有効化
+    slidesToShow: 5, //表示するスライドの数
+    focusOnSelect: true, //フォーカスの有効化
+    asNavFor: '.thumbnail', //thumbnailクラスのナビゲーション
+    autoplay: true,
+    autoplaySpeed: 4000,
+    speed: 400,
+    prevArrow: '<button class="slide-arrow prev-arrow"></button>',
+    nextArrow: '<button class="slide-arrow next-arrow"></button>'
+  });
+});

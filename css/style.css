@@ -391,6 +391,7 @@ header.fixed {
   transition: top 0.65s ease-in;
   -webkit-transition: top 0.65s ease-in;
   -moz-transition: top 0.65s ease-in;
+  z-index: 10;
 }
 
 header.fixed + section {
@@ -454,6 +455,12 @@ header .sns .fa-lg {
 
 header.bg-dark a {
   color: #ffffff;
+}
+
+@media screen and (min-width: 769px) and (max-width: 1170px) {
+  header .container_980 .sns {
+    margin: 0;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -987,8 +994,23 @@ footer .footer-nav + p {
 
 /*****  SNS *****/
 /**********  サブページ共通 **********/
+/***** header *****/
+.subpage header.fixed + section {
+  margin-top: 100px;
+}
+
+.subpage header #navbar * {
+  color: #3B4043;
+}
+
+@media screen and (max-width: 768px) {
+  .subpage header.fixed + section {
+    margin-top: 0px;
+  }
+}
+
+/*****  トップイメージ *****/
 .topimg {
-  padding: 0 0 60px;
   background: url(../img/topimg05.jpg) #ffffff no-repeat top center/cover;
   height: 530px;
   position: relative;
@@ -996,7 +1018,7 @@ footer .footer-nav + p {
 
 .topimg .container_1280 {
   position: absolute;
-  top: 38%;
+  top: 50%;
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
@@ -1014,8 +1036,9 @@ footer .footer-nav + p {
 .topimg .container_1280 .topimg_text {
   width: 260px;
   height: 470px;
-  padding: 30px 80px;
+  padding: 30px 130px;
   background: #939393;
+  position: relative;
 }
 
 .topimg .container_1280 .topimg_text p {
@@ -1025,11 +1048,19 @@ footer .footer-nav + p {
   margin-left: 0;
   margin: 0 auto;
   line-height: 2.2;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  height: 100%;
 }
 
-.topimg .container_1280 p {
+.topimg .container_1280 .topimg_sentence {
   line-height: 2.5;
   margin-left: 6%;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.7);
 }
 
 @media screen and (max-width: 768px) {
@@ -1050,15 +1081,16 @@ footer .footer-nav + p {
     padding: 30px 0;
     margin: 0 auto 4rem;
   }
-  .topimg .container_1280 p {
+  .topimg .container_1280 .topimg_sentence {
     margin-left: 0;
     line-height: initial;
     letter-spacing: inherit;
+    padding: 2rem 0;
   }
 }
 
 .topimg + main {
-  margin-top: 20rem;
+  margin-top: 26.5rem;
 }
 
 @media screen and (max-width: 768px) {
@@ -1067,112 +1099,40 @@ footer .footer-nav + p {
   }
 }
 
-.topimg2 {
-  margin-top: 180px;
-  padding: 0 0 60px;
-}
-
-.topimg2 .container_1280 {
-  margin-top: -10%;
-}
-
-.topimg2 .container_1280 .text_wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
-}
-
-.topimg2 .container_1280 .topimg_text {
-  padding: 5% 6%;
-  background: #939393;
-  max-width: 260px;
-}
-
-.topimg2 .container_1280 .topimg_text p {
-  font-size: 23px;
-  color: #ffffff;
-  max-height: 345px;
-  margin-left: 0;
-  margin: 0 auto;
-  line-height: 2.2;
-}
-
-.topimg2 .container_1280 p {
-  line-height: 2.5;
-  margin-left: 6%;
-}
-
-@media screen and (max-width: 768px) {
-  .topimg2 {
-    padding-bottom: 4rem;
-    margin-top: 360px;
-  }
-  .topimg2 .container_1280 .text_wrapper {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  .topimg2 .container_1280 .topimg_text {
-    width: 200px;
-    margin: 0 auto 4rem;
-  }
-  .topimg2 .container_1280 p {
-    line-height: initial;
-    letter-spacing: initial;
-  }
-  header.fixed + .topimg2 {
-    padding-bottom: 4rem;
-  }
-}
-
-.topimg2 + main .container_1280 {
-  margin-bottom: 14rem;
-}
-
-@media screen and (max-width: 768px) {
-  .topimg2 + main .container_1280 {
-    margin-bottom: 5rem;
-  }
-  .topimg2 + main .container_1280 img {
-    margin-left: 0px;
-  }
-  .topimg2 + main .container_1280 p {
-    line-height: 2.8rem;
-    font-size: 1.42rem;
-  }
-}
-
 /**********  サブページ共通 **********/
 /**********  会社概要ページ **********/
 #company {
   /*****  会社紹介 *****/
+}
+
+#company main {
   /*****  会社情報 *****/
 }
 
-#company .container_1280:nth-child(2n) {
+#company main .container_1280 {
+  margin-bottom: 14rem;
+}
+
+#company main .container_1280:nth-child(2n) {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: reverse;
       -ms-flex-direction: row-reverse;
           flex-direction: row-reverse;
 }
 
-#company .container_1280:nth-child(2n) img {
+#company main .container_1280:nth-child(2n) img {
   margin: 0 70px 0 0;
 }
 
-#company .company_info * {
+#company main .company_info * {
   color: #3B4043;
 }
 
-#company .company_info .container_980 {
+#company main .company_info .container_980 {
   padding: 0 20rem;
 }
 
-#company .company_info .container_980 ul {
+#company main .company_info .container_980 ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1180,46 +1140,42 @@ footer .footer-nav + p {
   margin-bottom: 3.5rem;
 }
 
-#company .company_info .container_980 ul:last-child {
+#company main .company_info .container_980 ul:last-child {
   margin-bottom: 0rem;
 }
 
-#company .company_info .container_980 ul li:first-child {
+#company main .company_info .container_980 ul li:first-child {
   width: 19rem;
 }
 
 @media screen and (max-width: 768px) {
-  #company .topimg2 + main .company_info .container_980,
-  #company .topimg1 + main .company_info .container_980 {
+  #company main .topimg2 + main .company_info .container_980,
+  #company main .topimg1 + main .company_info .container_980 {
     padding: 0px;
   }
-  #company .topimg2 + main .company_info .container_980 ul,
-  #company .topimg1 + main .company_info .container_980 ul {
+  #company main .topimg2 + main .company_info .container_980 ul,
+  #company main .topimg1 + main .company_info .container_980 ul {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
     margin-bottom: 0px;
   }
-  #company .topimg2 + main .company_info .container_980 ul li,
-  #company .topimg1 + main .company_info .container_980 ul li {
+  #company main .topimg2 + main .company_info .container_980 ul li,
+  #company main .topimg1 + main .company_info .container_980 ul li {
     margin-bottom: 1.8rem;
   }
-  #company .topimg2 + main .company_info .container_980 ul li:first-child,
-  #company .topimg1 + main .company_info .container_980 ul li:first-child {
+  #company main .topimg2 + main .company_info .container_980 ul li:first-child,
+  #company main .topimg1 + main .company_info .container_980 ul li:first-child {
     font-weight: bold;
   }
 }
 
-#company .contact .container_980 {
+#company main .contact .container_980 {
   padding: 0;
 }
 
-#company .access {
-  background: #E0E0E0;
-}
-
-#company .access iframe {
+#company main .access iframe {
   margin-bottom: 0rem;
 }
 
@@ -1255,4 +1211,108 @@ footer .footer-nav + p {
     margin-bottom: 0rem;
   }
 }
+
+/**********  施工事例ページ **********/
+/**********  施工事例 詳細情報ページ **********/
+#cases .case_slider .container_980 .slider_wrapper {
+  width: 780px;
+  margin: 0 auto;
+}
+
+#cases .case_slider .container_980 .slider_wrapper .thumbnail {
+  max-width: 700px;
+  margin: 0 auto 5px;
+  padding: 0;
+}
+
+#cases .case_slider .container_980 .slider_wrapper .thumbnail img,
+#cases .case_slider .container_980 .slider_wrapper .thumbnail-nav img {
+  width: 100%;
+}
+
+#cases .case_slider .container_980 .slider_wrapper .thumbnail-thumb {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+#cases .case_slider .container_980 .slider_wrapper .thumbnail-thumb .slick-list {
+  width: calc(100% - 0.5rem);
+  margin: 0 auto 0 0.5rem;
+}
+
+#cases .case_slider .container_980 .slider_wrapper .thumbnail-thumb div div div {
+  cursor: pointer;
+  margin-right: 0.5rem;
+}
+
+#cases .case_slider .container_980 .slider_wrapper .thumbnail-thumb .slide-arrow {
+  display: none !important;
+}
+
+#cases .case_detail .container_980 .case_detail_wrapper {
+  width: 780px;
+  margin: 0 auto;
+}
+
+#cases .case_detail .container_980 .case_detail_wrapper h3 {
+  font-size: 2.3rem;
+  margin: 0 0 1.5rem;
+  text-align: center;
+}
+
+#cases .case_detail .container_980 .case_detail_wrapper .case_before {
+  width: 345px;
+  margin: 0 auto;
+  display: block;
+}
+
+#cases .case_detail .container_980 .case_detail_wrapper .line {
+  width: 1px;
+  height: 100px;
+  background: #707070;
+  margin: 4rem auto;
+}
+
+#cases .case_detail .container_980 .case_detail_wrapper .case_after {
+  margin-bottom: 2.5rem;
+}
+
+/**********  施工事例 詳細情報ページ **********/
+/**********  施工の流れページ **********/
+#workflow .container_980 .item {
+  width: calc((100% - 45px) / 4);
+}
+
+#workflow .container_980 .item img {
+  margin-bottom: 5rem;
+}
+
+#workflow .container_980 .item .vertical-rl {
+  width: 100%;
+}
+
+#workflow .container_980 .item .vertical-rl h3 {
+  font-size: 3rem;
+}
+
+@media screen and (max-width: 768px) {
+  #workflow .container_980 .item {
+    width: 100%;
+    margin-bottom: 4rem;
+  }
+  #workflow .container_980 .item:last-child {
+    margin-bottom: 0rem;
+  }
+  #workflow .container_980 .item img {
+    margin-bottom: 0rem;
+  }
+  #workflow .container_980 .item .vertical-rl h3 {
+    font-size: 2.7rem;
+  }
+  #workflow .container_980 .item .vertical-rl p {
+    font-size: 1.42rem;
+  }
+}
+
+/**********  施工の流れページ **********/
 /*# sourceMappingURL=style.css.map */

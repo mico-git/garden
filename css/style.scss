@@ -408,6 +408,7 @@ header {
     transition: top 0.65s ease-in;
     -webkit-transition: top 0.65s ease-in;
     -moz-transition: top 0.65s ease-in;
+    z-index: 10;
 
     +section {
       padding: 100px 0 0 0;
@@ -449,6 +450,16 @@ header {
     color: $white;
   }
 
+}
+
+@include mq-down(md_xl_1280) {
+  header {
+    .container_980 {
+      .sns {
+        margin: 0;
+      }
+    }
+  }
 }
 
 @include mq-down(md) {
@@ -1063,16 +1074,44 @@ footer {
 
 
 /**********  サブページ共通 **********/
+/***** header *****/
+.subpage {
+  header {
+    &.fixed {
+      +section {
+        margin-top: 100px;
+      }
+    }
+
+    #navbar * {
+      color: #3B4043;
+    }
+  }
+}
+
+@include mq-down(md) {
+  .subpage {
+    header {
+      &.fixed {
+        +section {
+          margin-top: 0px;
+        }
+      }
+    }
+  }
+}
+
+/*****  トップイメージ *****/
 .topimg {
-  padding: 0 0 60px;
+  // padding: 0 0 60px;
   background: url(../img/topimg05.jpg) #ffffff no-repeat top center/cover;
   height: 530px;
   position: relative;
-  // box-sizing: border-box;
 
   .container_1280 {
     position: absolute;
-    top: 38%;
+    // top: 38%;
+    top: 50%;
     left: 50%;
     transform: translateX(-50%);
 
@@ -1084,8 +1123,10 @@ footer {
     .topimg_text {
       width: 260px;
       height: 470px;
-      padding: 30px 80px;
+      // padding: 30px 80px;
+      padding: 30px 130px;
       background: #939393;
+      position: relative;
 
       p {
         font-size: 23px;
@@ -1094,15 +1135,19 @@ footer {
         margin-left: 0;
         margin: 0 auto;
         line-height: 2.2;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 100%;
       }
     }
 
-    p {
+    .topimg_sentence {
       line-height: 2.5;
-      // letter-spacing: 0.9rem;
-      // margin-left: 8rem;
       margin-left: 6%;
-      // margin-bottom: 4rem;
+      padding: 2rem;
+      background: rgba(255, 255, 255, .7);
     }
   }
 }
@@ -1126,206 +1171,113 @@ footer {
         }
       }
 
-      p {
+      .topimg_sentence {
         margin-left: 0;
         line-height: initial;
         letter-spacing: inherit;
+        padding: 2rem 0;
       }
     }
   }
 }
 
-
 .topimg+main {
-  margin-top: 20rem;
+  // margin-top: 22rem;
+  margin-top: 26.5rem;
+
+
 }
 
 @include mq-down(md) {
   .topimg+main {
     margin-top: 30rem;
+    // margin-top: 40rem;
   }
 }
-
-.topimg2 {
-  margin-top: 180px;
-  padding: 0 0 60px;
-
-  .container_1280 {
-    margin-top: -10%;
-
-    .text_wrapper {
-      // position: absolute;
-      // left: 0;
-      // top: 50%;
-      display: flex;
-      align-items: flex-end;
-    }
-
-    .topimg_text {
-      padding: 5% 6%;
-      background: #939393;
-      max-width: 260px;
-
-      p {
-        font-size: 23px;
-        color: #ffffff;
-        // max-height: 440px;
-        max-height: 345px; //firefox
-        margin-left: 0;
-        margin: 0 auto;
-        line-height: 2.2;
-      }
-    }
-
-    p {
-      line-height: 2.5;
-      // letter-spacing: 0.9rem;
-      // margin-left: 8rem;
-      margin-left: 6%;
-      // margin-bottom: 4rem;
-    }
-  }
-}
-
-@include mq-down(md) {
-  .topimg2 {
-    padding-bottom: 4rem;
-    margin-top: 360px;
-
-    .container_1280 {
-      .text_wrapper {
-        flex-direction: column;
-      }
-
-      .topimg_text {
-        width: 200px;
-        margin: 0 auto 4rem;
-      }
-
-      p {
-        line-height: initial;
-        letter-spacing: initial;
-      }
-    }
-  }
-
-  header.fixed+.topimg2 {
-    padding-bottom: 4rem;
-  }
-}
-
-.topimg2+main {
-  .container_1280 {
-    margin-bottom: 14rem;
-  }
-}
-
-
-@include mq-down(md) {
-  .topimg2+main {
-    .container_1280 {
-      margin-bottom: 5rem;
-
-      img {
-        margin-left: 0px;
-      }
-
-      p {
-        line-height: 2.8rem;
-        font-size: 1.42rem;
-      }
-    }
-  }
-}
-
-
-
-
-// .topimg2+main {
-//   margin-top: 20rem;
-// }
 
 /**********  サブページ共通 **********/
 /**********  会社概要ページ **********/
 #company {
 
   /*****  会社紹介 *****/
-  .container_1280 {
-    &:nth-child(2n) {
-      flex-direction: row-reverse;
+  main {
+    .container_1280 {
+      &:nth-child(2n) {
+        flex-direction: row-reverse;
 
-      img {
-        margin: 0 70px 0 0;
-      }
-    }
-
-    // margin-bottom: 14rem;
-
-  }
-
-  /*****  会社情報 *****/
-  .company_info {
-    * {
-      color: #3B4043;
-    }
-
-    .container_980 {
-      padding: 0 20rem;
-
-
-      ul {
-        display: flex;
-        text-align: left;
-        margin-bottom: 3.5rem;
-
-        &:last-child {
-          margin-bottom: 0rem;
+        img {
+          margin: 0 70px 0 0;
         }
+      }
 
-        li {
-          &:first-child {
-            width: 19rem;
+      margin-bottom: 14rem;
+
+    }
+
+    /*****  会社情報 *****/
+    .company_info {
+      * {
+        color: #3B4043;
+      }
+
+      .container_980 {
+        padding: 0 20rem;
+
+
+        ul {
+          display: flex;
+          text-align: left;
+          margin-bottom: 3.5rem;
+
+          &:last-child {
+            margin-bottom: 0rem;
+          }
+
+          li {
+            &:first-child {
+              width: 19rem;
+            }
           }
         }
       }
+
     }
 
-  }
+    @include mq-down(md) {
 
-  @include mq-down(md) {
+      .topimg2+main,
+      .topimg1+main {
+        .company_info {
+          .container_980 {
+            padding: 0px;
 
-    .topimg2+main,
-    .topimg1+main {
-      .company_info {
-        .container_980 {
-          padding: 0px;
+            ul {
+              flex-direction: column;
+              margin-bottom: 0px;
 
-          ul {
-            flex-direction: column;
-            margin-bottom: 0px;
+              li {
+                margin-bottom: 1.8rem;
 
-            li {
-              margin-bottom: 1.8rem;
-
-              &:first-child {
-                font-weight: bold;
+                &:first-child {
+                  font-weight: bold;
+                }
               }
             }
           }
         }
       }
     }
-  }
 
-  .contact .container_980 {
-    padding: 0;
-  }
+    .contact .container_980 {
+      padding: 0;
+    }
 
-  .access {
-    background: #E0E0E0;
+    .access {
+      // background: #E0E0E0;
 
-    iframe {
-      margin-bottom: 0rem;
+      iframe {
+        margin-bottom: 0rem;
+      }
     }
   }
 }
@@ -1369,3 +1321,166 @@ footer {
     }
   }
 }
+
+/**********  施工事例ページ **********/
+
+
+/**********  施工事例 詳細情報ページ **********/
+#cases {
+  .case_slider {
+    .container_980 {
+      .slider_wrapper {
+        width: 780px;
+        margin: 0 auto;
+
+        .thumbnail {
+          max-width: 700px;
+          margin: 0 auto 5px;
+          padding: 0;
+        }
+
+        .thumbnail img,
+        .thumbnail-nav img {
+          width: 100%;
+        }
+
+        .thumbnail-thumb {
+          max-width: 700px;
+          margin: 0 auto;
+
+          // li {
+          //   margin: 5px;
+          // }
+
+          // .slick-next {
+          //   right: 20px;
+          //   z-index: 100;
+          // }
+
+          // .slick-prev {
+          //   left: 15px;
+          //   z-index: 100;
+          // }
+
+          // .slick-current {
+          //   opacity: 0.5;
+          // }
+
+          .slick-list {
+            width: calc(100% - 0.5rem);
+            margin: 0 auto 0 0.5rem;
+          }
+
+          div div div {
+            cursor: pointer;
+            margin-right: 0.5rem;
+          }
+
+          .slide-arrow {
+            // width: 10px;
+            // background: #000;
+            // position: absolute;
+            // z-index: 10;
+            // top: 50%;
+            // transform: translateY(-50%);
+            // margin: 0;
+            display: none !important;
+          }
+        }
+      }
+    }
+  }
+
+  .case_detail {
+    .container_980 {
+      .case_detail_wrapper {
+        width: 780px;
+        margin: 0 auto;
+
+        h3 {
+          font-size: 2.3rem;
+          margin: 0 0 1.5rem;
+          text-align: center;
+        }
+
+        .case_before {
+          width: 345px;
+          margin: 0 auto;
+          display: block;
+        }
+
+        .line {
+          width: 1px;
+          height: 100px;
+          background: #707070;
+          margin: 4rem auto;
+        }
+
+        .case_after {
+          margin-bottom: 2.5rem;
+        }
+      }
+    }
+
+
+  }
+}
+
+/**********  施工事例 詳細情報ページ **********/
+
+
+
+
+/**********  施工の流れページ **********/
+#workflow {
+  .container_980 {
+    .item {
+      width: calc((100% - 45px) / 4);
+
+      img {
+        margin-bottom: 5rem;
+      }
+
+      .vertical-rl {
+        width: 100%;
+
+        h3 {
+          font-size: 3rem;
+        }
+      }
+    }
+  }
+}
+
+@include mq-down(md) {
+  #workflow {
+    .container_980 {
+      .item {
+        width: 100%;
+        margin-bottom: 4rem;
+
+        &:last-child {
+          margin-bottom: 0rem;
+        }
+
+        img {
+          margin-bottom: 0rem;
+        }
+
+        .vertical-rl {
+          // width: 100%;
+
+          h3 {
+            font-size: 2.7rem;
+          }
+
+          p {
+            font-size: 1.42rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+/**********  施工の流れページ **********/
