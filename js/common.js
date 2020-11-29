@@ -153,6 +153,11 @@ $(document).ready(function () {
     autoplaySpeed: 4000,
     speed: 400,
     prevArrow: '<button class="slide-arrow prev-arrow"></button>',
-    nextArrow: '<button class="slide-arrow next-arrow"></button>'
+    nextArrow: '<button class="slide-arrow next-arrow"></button>',
+    // mobileFirst: true,
+    responsive: [{
+      breakpoint: 768,
+      settings: 'unslick'
+    }]
   });
 });

@@ -1003,6 +1003,26 @@ footer .footer-nav + p {
   color: #3B4043;
 }
 
+.subpage header #navbar li a {
+  color: #ffffff;
+}
+
+.subpage header #navbar span {
+  background: #3B4043;
+}
+
+.subpage header #navbar span:before, .subpage header #navbar span:after {
+  background: #3B4043;
+}
+
+.subpage header #navbar.global-nav-open .global-nav-trigger span {
+  background-color: transparent;
+}
+
+.subpage header #navbar.global-nav-open .global-nav-trigger span:before, .subpage header #navbar.global-nav-open .global-nav-trigger span:after {
+  background: #ffffff;
+}
+
 @media screen and (max-width: 768px) {
   .subpage header.fixed + section {
     margin-top: 0px;
@@ -1275,6 +1295,15 @@ footer .footer-nav + p {
 
 #cases .case_detail .container_980 .case_detail_wrapper .case_after {
   margin-bottom: 2.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  #cases .case_slider .container_980 .slider_wrapper .thumbnail {
+    display: none;
+  }
+  #cases .case_slider .container_980 .slider_wrapper .thumbnail-thumb div {
+    margin-bottom: 2rem;
+  }
 }
 
 /**********  施工事例 詳細情報ページ **********/

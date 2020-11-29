@@ -1083,9 +1083,41 @@ footer {
       }
     }
 
-    #navbar * {
-      color: #3B4043;
+    #navbar {
+      * {
+        color: #3B4043;
+      }
+
+      li {
+        a {
+          color: #ffffff;
+        }
+      }
+
+      span {
+        background: #3B4043;
+
+        &:before,
+        &:after {
+          background: #3B4043;
+        }
+      }
+
+      &.global-nav-open {
+        .global-nav-trigger {
+          span {
+            background-color: transparent;
+
+            &:before,
+            &:after {
+              background: #ffffff;
+              ;
+            }
+          }
+        }
+      }
     }
+
   }
 }
 
@@ -1423,6 +1455,26 @@ footer {
     }
 
 
+  }
+}
+
+@include mq-down(md) {
+  #cases {
+    .case_slider {
+      .container_980 {
+        .slider_wrapper {
+          .thumbnail {
+            display: none;
+          }
+
+          .thumbnail-thumb {
+            div {
+              margin-bottom: 2rem;
+            }
+          }
+        }
+      }
+    }
   }
 }
 
