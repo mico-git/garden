@@ -797,6 +797,7 @@ footer .footer-nav + p {
 .hero_img {
   padding: 0;
   margin-top: -10rem;
+  position: relative;
 }
 
 .hero_img .slick-list {
@@ -810,35 +811,89 @@ footer .footer-nav + p {
   opacity: 0.7;
 }
 
-.hero_img p {
-  color: #ffffff;
+.hero_img .hero_img_p,
+.hero_img .hero_img_p2 {
+  display: none;
+}
+
+.hero_img .animation01 {
+  display: block;
   opacity: 0;
-  -webkit-transform: translate(-50%, -40%);
-          transform: translate(-50%, -40%);
-  -webkit-transition: all 6s;
-  transition: all 6s;
-}
-
-.hero_img p.hero_fadein {
+  animation: fadeIn 2s ease 2s 1 normal;
+  -webkit-animation: fadeIn 2s ease 2s 1 normal;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
   position: absolute;
-  top: calc(50% + 1rem);
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-}
-
-.hero_img p.hero_fadein:nth-of-type(2) {
+  top: calc(50% - 5rem);
   width: 10rem;
-  height: auto;
-  position: absolute;
-  top: calc(50% - 10rem);
   left: 50%;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(-50%, -40%);
+            transform: translate(-50%, -40%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(-50%, -40%);
+            transform: translate(-50%, -40%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+}
+
+.hero_img .animation02 {
+  display: block;
+  opacity: 0;
+  animation: fadeIn2 4s ease 4s 1 normal;
+  -webkit-animation: fadeIn2 4s ease 4s 1 normal;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  position: absolute;
+  top: calc(50% + 8rem);
+  left: 50%;
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
+  letter-spacing: 5px;
+  color: #ffffff;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
 }
 
-.hero_img p.hero_fadein:nth-of-type(3) {
-  top: calc(50% + 13rem);
+@keyframes fadeIn2 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeIn2 {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(-50%, -40%);
+            transform: translate(-50%, -40%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -1003,10 +1058,6 @@ footer .footer-nav + p {
   color: #3B4043;
 }
 
-.subpage header #navbar li a {
-  color: #ffffff;
-}
-
 .subpage header #navbar span {
   background: #3B4043;
 }
@@ -1021,6 +1072,10 @@ footer .footer-nav + p {
 
 .subpage header #navbar.global-nav-open .global-nav-trigger span:before, .subpage header #navbar.global-nav-open .global-nav-trigger span:after {
   background: #ffffff;
+}
+
+.subpage header #navbar.global-nav-open li a {
+  color: #ffffff;
 }
 
 @media screen and (max-width: 768px) {
@@ -1115,7 +1170,7 @@ footer .footer-nav + p {
 
 @media screen and (max-width: 768px) {
   .topimg + main {
-    margin-top: 30rem;
+    margin-top: 40rem;
   }
 }
 
@@ -1168,35 +1223,24 @@ footer .footer-nav + p {
   width: 19rem;
 }
 
-@media screen and (max-width: 768px) {
-  #company main .topimg2 + main .company_info .container_980,
-  #company main .topimg1 + main .company_info .container_980 {
-    padding: 0px;
-  }
-  #company main .topimg2 + main .company_info .container_980 ul,
-  #company main .topimg1 + main .company_info .container_980 ul {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    margin-bottom: 0px;
-  }
-  #company main .topimg2 + main .company_info .container_980 ul li,
-  #company main .topimg1 + main .company_info .container_980 ul li {
-    margin-bottom: 1.8rem;
-  }
-  #company main .topimg2 + main .company_info .container_980 ul li:first-child,
-  #company main .topimg1 + main .company_info .container_980 ul li:first-child {
-    font-weight: bold;
-  }
-}
-
 #company main .contact .container_980 {
   padding: 0;
 }
 
 #company main .access iframe {
   margin-bottom: 0rem;
+}
+
+@media screen and (max-width: 768px) {
+  #company main .container_1280 {
+    margin-bottom: 5rem;
+  }
+  #company main .company_info .container_980 {
+    padding: 0;
+  }
+  #company main .company_info .container_980 li:first-child {
+    max-width: 30%;
+  }
 }
 
 /**********  会社概要ページ **********

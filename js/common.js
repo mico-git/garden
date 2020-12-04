@@ -34,7 +34,7 @@ $(function () {
     arrows: false,
   });
 });
-//フェードイン
+//フェードイン　使っていない
 window.onload = function () {
   scroll_effect();
 
@@ -65,22 +65,31 @@ window.onload = function () {
 
 
 
+// $(function () {
+
+//   var delaySpeed = 2000; // 1秒ずつ遅らせる
+//   var fadeSpeed = 1000; // 1秒かける
+
+//   $(window).on('load', function () {
+
+//     $('.hero_img p').each(function (i) {
+//       $(this).delay(i * (delaySpeed)).animate({
+//         'opacity': '1'
+//       }, fadeSpeed).addClass('hero_fadein');
+//     });
+
+//   });
+
+// });
+// トップページロゴフェードイン
 $(function () {
-
-  var delaySpeed = 2000; // 1秒ずつ遅らせる
-  var fadeSpeed = 1000; // 1秒かける
-
   $(window).on('load', function () {
-
-    $('.hero_img p').each(function (i) {
-      $(this).delay(i * (delaySpeed)).animate({
-        'opacity': '1'
-      }, fadeSpeed).addClass('hero_fadein');
-    });
-
+    $('.hero_img_p').addClass('animation01');
+    $('.hero_img_p2').addClass('animation02');
   });
-
 });
+
+
 
 
 
